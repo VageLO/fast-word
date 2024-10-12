@@ -91,7 +91,7 @@ class Wordhunt(WebService):
 
         css_img = ''
         for img in imgs:
-            img = f'https{img.split("https")[1]}'
+            img = f'https:{img}'
             filename = get_hex_name(self.unique.lower(), img, 'jpeg')
             full_path = f'/home/vagelo/.local/share/Anki2/main/collection.media/{filename}'
 
