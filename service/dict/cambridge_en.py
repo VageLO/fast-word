@@ -102,7 +102,7 @@ class CambridgeEN(WebService):
 
         audio = ""
         if source:
-            audio = f'<audio controls src="https://dictionary.cambridge.org{source["src"]}"></audio>'
+            audio = f'<audio id="us_audio" controls src="https://dictionary.cambridge.org{source["src"]}"></audio>'
 
         result = {
             "audio": audio,
@@ -216,5 +216,5 @@ class CambridgeEN(WebService):
         elif us_phon["audio"] is not None:
             audio = us_phon["audio"]
 
-        result = f"<div>{''.join([audio, phonetics, word_type])}</div>"
+        result = f"<div>{'<br>'.join([audio, phonetics, word_type])}</div>"
         return result
